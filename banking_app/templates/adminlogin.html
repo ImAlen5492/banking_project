@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color:#6dab3c;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top:80px
+        }
+
+        table {
+            width: 100%;
+
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body style=" background-color:#f2f6fc;">
+<h1 style="margin-left:680px;margin-top:100px">ADMIN</h1>
+    <form method="post">{% csrf_token %}
+        <table>
+            <tr>
+                <th><label>Username</label></th>
+                <td><input style="border-radius:40px;width:230px" type="text"  name="username"></td>
+            </tr>
+            <tr>
+                <th><label>Password</label></th>
+                <td><input style="border-radius:40px;width:230px" type="password" name="password"></td>
+            </tr>
+            <tr>
+                <th colspan="2"><button style="border-radius:40px;font-size:17px;font-family: 'Times New Roman', Times, serif;" type="submit">Submit</button></th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

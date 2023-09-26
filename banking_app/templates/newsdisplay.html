@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+function myFunction() {
+
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('div');
+
+
+
+
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("h5")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+   <style>
+        #a{height: 50px;width: 50px;}
+        #h{width: 700px;margin-left: 300px;}
+    </style>
+<script src="https://kit.fontawesome.com/db6eb46503.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<body style=" background-color:#f2f6fc;">
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search By Topic">
+
+<a href="http://127.0.0.1:8000/banking_app/wishdisplay/">Wishlist</a>
+
+<div id="myUL">
+    <table>
+        {% for i in a %}
+        <div class="col-12">
+            <div class="card" style="width:700px;">
+                <img id="a" src="{% static 'rodeo-project-management-software-PYqzYhTNjho-unsplash.jpg' %}" class="card-img-top" alt="...">
+                <div style="width:600px" class="card-body">
+                    <h5 class="card-title">{{i.topic}}</h5>
+                    <p class="card-text">{{i.content}}</p>
+                    <p class="card-text">{{i.date}}</p>
+                    <a href=""><i class="fa-solid fa-thumbs-up"></i></a>
+                    <a href="http://127.0.0.1:8000/banking_app/wishlist/{{i.id}}"><i class="fa-solid fa-heart"></i></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </table>
+</div>
+</body>
+</html>

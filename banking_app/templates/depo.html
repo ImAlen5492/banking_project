@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <script>
+        function myfunction(){
+
+    var body=document.getElementById('body').innerHTML;
+    var data=document.getElementById('data').innerHTML;
+    document.getElementById('body').innerHTML=data;
+    window.print()
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid black;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+
+        td {
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body style=" background-color:#f2f6fc;" id="body">
+<div id="data">
+  <h2>DEPOSIT DETAILS</h2>
+  <table>
+    <tr>
+
+
+      <th>Date</th>
+      <th>Deposit Amount</th>
+    </tr>
+    {% for i in x %}
+    {% if i.uid == id %}
+    <tr>
+
+
+      <td>{{i.date}}</td>
+      <td>{{i.amount}}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+
+
+  </table>
+</div>
+    <button onclick="myfunction()"> print deposit page</button>
+</body>
+</html>

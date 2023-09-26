@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color:#6dab3c;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top:80px
+        }
+
+        table {
+            width: 100%;
+
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        a[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        a[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body style=" background-color:#f2f6fc;">
+<h1 style="margin-left:680px;margin-top:100px"></h1>
+    <form method="post">{% csrf_token %}
+        <table>
+
+            <tr>
+                <th colspan="2"><a style="border-radius:40px;font-size:17px;font-family: 'Times New Roman', Times, serif;" type="submit" href="http://127.0.0.1:8000/banking_app/news/">NEWS FEED</a></th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

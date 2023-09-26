@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #7fc4f5;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Times New Roman', Times, serif
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body style=" background-color:#f2f6fc;" >
+<h1 style="margin-left:680px;margin-top:80px">EDIT</h1>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        <table>
+            <tr>
+                <th><label>topic</label></th>
+                <td><input type="text" name="topic" value="{{a.topic}}"></td>
+            </tr>
+            <tr>
+                <th><label>Content</label></th>
+                <td><input type="text" name="content" value="{{a.content}}" ></td>
+            </tr>
+                <th colspan="2"><button type="submit">Submit</button></th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

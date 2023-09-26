@@ -1,0 +1,32 @@
+from django.urls import path
+from .views import *
+
+urlpatterns=[
+    path('register/',register),
+    path('logregister/',logregister),
+    path('index/',index),
+    path('profile/',profile),
+    path('edit/<int:id>',edit),
+    path('editimage/<int:id>',editimage),
+    path('success/',success),
+    path('addamount/<int:id>',addamoney),
+    path('withdrawamount/<int:id>',withdrawmoney),
+    path('withdrawsuccess/',withdrawsuccess),
+    path('checkbalance/<int:id>',checkbalance),
+    path('checkbalance1/',checkbalance1),
+    path('ministatement/<int:id>',ministatement),
+    path('deposit/',deposit),
+    path('withdrawmini/',withdrawmini),
+    path('news/', news),
+    path('adminlogin/', adminlogin),
+    path('adminprofile/', adminprofile),
+    path('newsdisplay/', newsdisplay),
+    path('adminnewsdisplay/', adminnewsdisplay),
+    path('admineditnews/<int:id>', admineditnews),
+    path('adminnewsdelete/<int:id>', adminnewsdelete),
+    path('wishlist/<int:id>', wish),
+    path('wishdisplay/', wishdisplay),
+    path('logout/', logoutview),
+    path('forgotpassword/', forgot_password),
+    path('change/<int:id>', change_password),
+]
